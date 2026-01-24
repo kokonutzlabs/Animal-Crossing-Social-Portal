@@ -1,84 +1,198 @@
-# Nook_Book.HTML system_setup_and_baseline_environment
+# Warehouse Social Portal  
+### SQL Vulnerability Demonstration, Forensic Analysis, and Remediation Lab
 
-Hello,
-Nook_Book is a small, controlled web application created to understand how HTML, PHP, and SQL interact in a basic system environment. While the project is themed around Animal Crossing and visually modeled after a social media profile, its long-term purpose is to serve as a learning platform for digital forensics and data integrity concepts.
+---
 
-Version 1 focuses exclusively on system setup and baseline behavior. No authentication, security controls, or forensic logging are implemented at this stage.
+## Project Overview
 
-## Purpose
-The goal of Version 1 is to:
-- establish the application structure
-- define how user interaction data is stored
-- create a known “normal” state of the system
-- document system components before introducing incidents or analysis
+This project is a web-based application backed by an SQL database, designed to simulate an internal communication portal used in a warehouse or production environment.
 
-This baseline will be used in later versions to compare changes, investigate anomalies, and analyze system behavior.
+The application intentionally includes common SQL-related security vulnerabilities to demonstrate how insecure database interactions can be exploited, how those attacks impact system data, and how digital forensic analysis can be used to investigate and remediate the incident.
 
-## System Scope
-At this stage, the system supports:
-- a static HTML profile page
-- basic user interaction via form submissions
-- backend processing with PHP
-- storage of interaction data in a SQL database
-- local execution in a controlled environment (XAMPP)
+This project is implemented as a controlled lab environment and focuses on the full security lifecycle: system design, attack simulation, forensic investigation, and secure remediation.
 
-The system does not include:
-- user authentication or sessions
-- access controls
-- input validation beyond basic handling
-- logging or audit trails
-- security hardening
+---
 
-These exclusions are intentional and documented.
+## Project Purpose
 
-## File Explainations:
-#### HTML
-##### **nook-book.html:** Displays a single villager profile. Users can submit interactions such as votes, reactions, or comments through HTML forms.
-#### PHP
-##### **nook-book.php:** Handles form submissions and displays confirmation messages after user interaction
-##### **nook-book-db1.php:** Creates the SQL database used to store interaction records.
-##### **nook-book-conn1.php:** Establishes the database connection between the application and SQL backend.
-##### **nook-book-setup1.php:** Creates the database tables used to store submitted form data.
-##### **nook-book-forms1.php:** Captures user input from HTML forms and inserts the data into the database.
-## Programs Used:
-- VS Code
-- XAMPP
-- PhpMyAdmin
-## Languages Used:
-- HTML
-- CSS
-- PHP
-- SQL
+The purpose of this project is to demonstrate practical knowledge of:
 
-## Data Handling
-In Part 1:
-- each form submission results in a new database entry
-- records are stored without user identification or authentication
-- data is not edited or deleted once inserted
-- database entries represent raw interaction records
+- SQL-backed web application architecture
+- Common database attack techniques
+- Digital forensic investigation of web applications
+- Secure remediation and hardening techniques
 
-This part establishes a baseline dataset for future comparison and analysis.
+All vulnerabilities are intentional and exist solely for educational and defensive security purposes.
 
-## Sources I've Used:
-- [w3schools](https://www.w3schools.com/)
-- [PHP TUTORIAL](https://www.phptutorial.net/php-tutorial/php-radio-button/)
-## How To View The Site
-#### Option One:
-###### If it's still up, you can view the project through my [Neocities Page](https://fuzzykokonutz.neocities.org/). It is in the project section of the page and is the first link on the list. But you will not be able to use the interactions, since it doesn't allow backend.
-#### Option Two:
-- 1. Download [XAMPP](https://www.apachefriends.org/download.html) (this gives you a local host to run the php and mysql files)
-- 2. Download each file I provided. (if you want the social experience, exclude nook-book.php)
-- 3. Create and name a folder to put the downloaded files in. (save it in the local host files)
-- 4. After setting up your XAMPP, open it and start the Apache and MySQL.
-- 5. Open your browser and enter ex.) localhost/(whatever the folder name is) in the search bar.
-- 6. When the local host is open, click on the nook-book.html file. (Viola, enjoy! ⸂⸂⸜(രᴗര๑)⸝⸃⸃ )
+---
 
-## Planned Future Versions
-- Version 2: interaction logging and system visibility
-- Version 3: simulated incidents and data integrity analysis
-- Version 4: forensic investigation and reporting
+## Scenario Description
 
-## Updates 
-1. I will add more to the html later on 12/31/25
-2. I made a new repository for my next step for my project.
-3. I will fix the php data transfer without interrupting user experience. 1/1/26
+The application simulates an internal social and logging system used by warehouse personnel to share updates, communicate shift information, and record operational notes.
+
+User roles include:
+- Employee
+- Supervisor
+- Administrator
+
+The system stores operational and personnel-related data that would be considered sensitive in a real production environment.
+
+---
+
+## Technology Stack
+
+- **Frontend:** HTML, CSS  
+- **Backend:** [PHP / Python / Node.js]  
+- **Database:** [MySQL / MariaDB]  
+- **Environment:** Localhost (lab-only deployment)
+
+Optional components:
+- Application logging
+- Database query logging
+
+---
+
+## Application Architecture
+
+The application follows a standard web architecture:
+
+- Client-side HTML forms submit user input
+- Backend logic processes requests and interacts with the SQL database
+- The database stores user credentials, role information, and internal messages
+
+Initial versions of the application use insecure database queries to demonstrate real-world vulnerabilities.
+
+---
+
+## Database Design
+
+The database includes the following key tables:
+
+- `users`  
+  Stores user credentials and role assignments
+
+- `posts`  
+  Stores internal messages and operational notes
+
+- `logs`  
+  Records authentication and application events
+
+The database is intentionally configured with insufficient input validation and access controls during the initial phase of the project.
+
+---
+
+## Demonstrated Vulnerabilities
+
+The following vulnerabilities are intentionally implemented and documented:
+
+- SQL Injection  
+  - Authentication bypass  
+  - Unauthorized data access  
+
+- Weak Authentication Controls  
+  - Insecure password storage  
+
+- Insufficient Input Validation  
+
+- Excessive Database Privileges  
+
+These vulnerabilities reflect common issues found in poorly secured internal applications.
+
+---
+
+## Attack Simulation
+
+Simulated attacks are conducted in a controlled lab environment to demonstrate:
+
+- Bypassing authentication mechanisms
+- Extracting unauthorized data from the database
+- Escalating access privileges
+
+The goal of the attack phase is to observe system behavior and identify what forensic evidence is generated during exploitation.
+
+---
+
+## Forensic Analysis
+
+Digital forensic analysis focuses on identifying and reconstructing unauthorized activity using available evidence.
+
+Analysis includes:
+- Review of application logs
+- Review of database query logs
+- Identification of anomalous authentication events
+
+Findings include:
+- Timeline reconstruction of unauthorized access
+- Identification of compromised accounts
+- Documentation of gaps in logging and monitoring
+
+This analysis highlights the importance of proper logging and visibility in production environments.
+
+---
+
+## Impact Assessment
+
+The simulated attacks demonstrate potential risks to:
+
+- **Confidentiality:** Exposure of employee and operational data  
+- **Integrity:** Unauthorized modification of stored information  
+- **Availability:** Potential disruption of internal systems  
+
+These impacts are evaluated within the context of a warehouse or production environment.
+
+---
+
+## Remediation and Hardening
+
+After forensic analysis, the application is hardened using secure coding practices, including:
+
+- Parameterized SQL queries
+- Secure password hashing
+- Role-based access control
+- Input validation and sanitization
+- Improved logging and monitoring
+
+Following remediation, the original attack methods are reattempted to validate that vulnerabilities have been successfully mitigated.
+
+---
+
+## Validation
+
+Post-remediation testing confirms:
+
+- SQL injection attempts are no longer effective
+- Unauthorized access is prevented
+- Improved forensic evidence is generated during suspicious activity
+
+---
+
+## Ethical Notice
+
+This project is intended for educational and defensive security purposes only.
+
+The vulnerable version of this application must not be deployed in a production environment or exposed to the public internet.
+
+---
+
+## Local Setup (Lab Environment)
+
+1. Clone the repository
+2. Configure database credentials
+3. Import the provided SQL schema
+4. Run the application locally using [XAMPP / Docker / etc.]
+
+---
+
+## Skills Demonstrated
+
+- SQL database design
+- Web application security testing
+- Digital forensic analysis
+- Incident response methodology
+- Secure application development
+
+---
+
+## License
+
+This project is provided for educational use only.
