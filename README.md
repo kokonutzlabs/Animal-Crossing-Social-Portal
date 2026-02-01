@@ -219,6 +219,12 @@ The intentionally vulnerable version **must not** be deployed in production or e
 
 ---
 
+## Live Demo
+- [nookbook.com]
+  (https://raw.githack.com/kokonutzlabs/Animal-Crossing-Social-Portal/index.html)
+
+---
+
 ## License
 
 This project is provided for **educational use only**.
