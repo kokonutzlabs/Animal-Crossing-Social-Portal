@@ -6,10 +6,10 @@ This is an independently made project. Its purpose was to help me better underst
 
 ## Key Concepts
 - SQL Injection8
-- Weak Authentication Controls9
-- Input Validation Failures10
-- Excessive Database Privileges11
-- Digital Forensic Analysis12
+- Weak Authentication Controls
+- Input Validation Failures
+- Excessive Database Privileges
+- Digital Forensic Analysis
 - Incident Response & Remediation
 
 ## Tech Stack
@@ -20,10 +20,10 @@ This is an independently made project. Its purpose was to help me better underst
 - MySQL / MySQi
 
 ## Skills Demostrated
-- SQL Database Design22
-- Web Application Security Testing23
-- Digital Forensics24
-- Incident Response25
+- SQL Database Design
+- Web Application Security Testing
+- Digital Forensics
+- Incident Response
 - Secure Coding Practices
 
 ## Live Demo
